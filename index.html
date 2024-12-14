@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-TECH テクノロジー</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            padding-top: 90px;
+            width: 100%;
+        }
+
+        .wrapper {
+            width: 1366px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 1366px;
+            height: 90px;
+            background: #FFFFFF;
+            box-shadow: 0px 3px 6px #00000029;
+            z-index: 1000;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-button {
+            position: relative;
+            width: 200px;
+            height: 48px;
+            background: transparent linear-gradient(270deg, #1D2C51 0%, #2457CC 100%);
+            border-radius: 4px;
+            opacity: 1;
+            color: #FFFFFF;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero {
+            position: relative;
+            width: 1366px;
+            height: 768px;
+            overflow: hidden;
+        }
+
+        #hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-content h1 {
+            color: #FFFFFF;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .news {
+            position: absolute;
+            bottom: px;
+            right: 40px;
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+        }
+
+        .news p:first-child {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .news p:last-child {
+            color: #666;
+        }
+
+        #about, #services, #news, #overview, #map, #contact {
+            width: 1366px;
+            margin: 0 auto;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        #services .service {
+            margin: 1rem 0;
+        }
+
+        #news .news-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .view-all {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #overview ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #overview ul li {
+            margin-bottom: 1rem;
+        }
+
+        #map .map-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 426px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            width: 1366px;
+            margin: 0 auto;
+        }
+
+        .footer {
+            background-color: #f0f0f5;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 1rem;
+            color: #555555;
+        }
+
+        .social-icons {
+            margin: 1rem 0;
+        }
+
+        .social-icon {
+            margin: 0 0.5rem;
+        }
+
+        .social-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        header nav {
+            position: absolute;
+            top: 21px;
+            left: 723px;
+            width: 607px;
+            height: 48px;
+            opacity: 1;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        header nav ul li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .logo-image {
+            position: absolute;
+            top: 5px;
+            left: 32px;
+            width: 80px;
+            height: 80px;
+            opacity: 1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 33px;
+            left: 122px;
+            width: 188px;
+            height: 23px;
+        }
+
+        .logo a {
+            text-align: center;
+            font: normal normal bold 18px/18px Yu Gothic;
+            letter-spacing: 0.72px;
+            color: #1D2C51;
+            opacity: 1;
+            text-decoration: none;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scroll-arrow {
+            width: 12px;
+            height: 12px;
+            border-right: 2px solid #FFFFFF;
+            border-bottom: 2px solid #FFFFFF;
+            transform: rotate(45deg);
+            margin-top: -6px;
+        }
+
+        #about {
+            width: 1366px;
+            margin: 0 auto;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 36px;
+            color: #1D2C51;
+            margin-bottom: 60px;
+        }
+
+        #about p {
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #services {
+            width: 1366px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+
+        .service-title {
+            margin-bottom: 40px;
+        }
+
+        .service-title h2 {
+            font-size: 36px;
+            color: #1D2C51;
+            margin: 0;
+        }
+
+        .service-title p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .service-content {
+            flex: 1;
+            padding-right: 60px;
+        }
+
+        .service-number {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .service-name {
+            font-size: 48px;
+            color: #1D2C51;
+            margin-bottom: 20px;
+        }
+
+        .service-name-jp {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .service-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .service-image {
+            flex: 1;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .service-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-item:nth-child(even) .service-content {
+            padding-right: 0;
+            padding-left: 60px;
+        }
+
+        .service-item {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-image">
+            <img src="ogp-image.png" alt="A-TECH Logo">
+        </div>
+        <div class="logo">
+            <a href="#">A-TECH テクノロジ-</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">私たちについて</a></li>
+                <li><a href="#services">サービス</a></li>
+                <li><a href="#news">お知らせ</a></li>
+                <li><a href="#access">アクセス</a></li>
+                <li><a href="#contact" class="contact-button">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <section id="hero">
+            <img src="FV_bg_pc.png" alt="Hero Image" style="width:100%; height:auto;">
+            <div class="hero-content">
+                <h1>未来を形にするテクノロジー</h1>
+                <div class="news">
+                    <p>News</p>
+                    <p>YYYY.MM.DD タイトルが入ります。タイトルが入ります…</p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>A-TECH テクノロジーについて</h2>
+            <div class="about-content">
+                <p>A-TECH テクノロジーは、</p>
+                <p>テクノロジーの力でビジネスの未来を形作るイノベーションリーダーです。</p>
+                <p>私たちは革新的なITソリューションを提供し、お客様のビジョンを現実にするお手伝いをしています。</p>
+                <p>最新のセキュリティテクノロジーを活用し、お客様のデータとシステムを確実に守ります。</p>
+                <p>未来を共に切り拓くためのパートナーシップの一環として、私たちと一緒に進んでいきませんか？</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="service-title">
+                <h2>Our Services.</h2>
+                <p>サービス</p>
+            </div>
+
+            <div class="service-item">
+                <div class="service-content">
+                    <p class="service-number">— 01.</p>
+                    <h3 class="service-name">Digital Transformation</h3>
+                    <p class="service-name-jp">デジタルトランスフォーメーション</p>
+                    <p class="service-description">ビジネスを次のレベルに引き上げるための<br>包括的なデジタル変革戦略を提供します。</p>
+                </div>
+                <div class="service-image">
+                    <img src="img01.png" alt="Digital Transformation">
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="img02.png" alt="Custom Software">
+                </div>
+                <div class="service-content">
+                    <p class="service-number">— 02.</p>
+                    <h3 class="service-name">Custom Software</h3>
+                    <p class="service-name-jp">カスタムソフトウェア開発</p>
+                    <p class="service-description">お客様のニーズに合わせてデザインされた<br>ソフトウェアソリューションを提供し、<br>業績向上を実現します。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news">
+            <h2>News.</h2>
+            <div class="news-item">
+                <p>YYYY.MM.DD テリ タイトルが入ります。タイトルが入ります。</p>
+            </div>
+            <div class="news-item">
+                <p>YYYY.MM.DD カテゴリ タイトルが入ります。タイトルが入ります。</p>
+            </div>
+            <div class="news-item">
+                <p>YYYY.MM.DD カテゴリ タイトルが入ります。タイトルが入ります。</p>
+            </div>
+            <a href="#" class="view-all">View All</a>
+        </section>
+
+        <section id="overview">
+            <h2>Overview.</h2>
+            <ul>
+                <li>会社名: 株式会社A-TECH テクノロジー</li>
+                <li>所在地: 〒123-4567 東京都新宿区◯◯7丁目◯◯ビル309</li>
+                <li>電話番号: 012-3456-7890</li>
+                <li>営業時間: 10:00～18:00（土日祝を除く）</li>
+            </ul>
+        </section>
+
+        <section id="map">
+            <h2>Map.</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12961.528373639386!2d139.69170672925043!3d35.68948249376715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd0d6b1ba1f%3A0x1c0a917c0c1c9811!2z5paw5a6_5Yy6!5e0!3m2!1sja!2sjp!4v1709775046015!5m2!1sja!2sjp"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div style="background-color: #2c3e50; color: white; padding: 2rem; text-align: center;">
+                <h2>お問い合わせ</h2>
+                <p>お事のご相談やその他ご質問、お気軽にお問い合わせください。</p>
+                <button style="background-color: white; color: #2c3e50; padding: 1rem 2rem; border: none; border-radius: 5px; cursor: pointer;">お問い合わせ</button>
+                <p>お問い合わせ電話: <strong>123-4567-8910</strong></p>
+                <p>[受付時間] 10:00 ~ 18:00 (土日祝を除く)</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 A-TECH テクノロジー. All Rights Reserved.</p>
+    </footer>
+
+    <footer class="footer">
+        <div class="contact-info">
+          <p>〒123-4567</p>
+          <p>東京都新宿区○○7丁目○○ビル309</p>
+          <p>TEL:123-4567-8910</p>
+          <p>FAX:12-345-6789</p>
+        </div>
+        
+        <div class="social-icons">
+          <a href="#" class="social-icon"><img src="x icon .webp" alt="X (Twitter)"></a>
+          <a href="#" class="social-icon"><img src="ig icon.webp" alt="Instagram"></a>
+          <a href="#" class="social-icon"><img src="yt icon.webp" alt="YouTube"></a>
+        </div>
+        
+        <div class="copyright">
+          <p>© a-tech technology inc. 2023</p>
+        </div>
+      </footer>
+    
+    
+</body>
+</html>
